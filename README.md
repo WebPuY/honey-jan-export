@@ -16,5 +16,5 @@ $ honey-jan-export
 
 eg.
 ```javascript
-honey-jan-export port=3333 words=test1|test2|test3
+honey-jan-export words=test1|test2|test3
 ```
