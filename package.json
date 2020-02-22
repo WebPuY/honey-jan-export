@@ -1,0 +1,33 @@
+{
+  "name": "honey-jan-export",
+  "version": "1.0.0",
+  "description": "find words from word docs and export a excel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "honey-jan-export"
+  },
+  "bin": {
+    "honey-jan-export": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebPuY/honey-jan-export.git"
+  },
+  "author": "August",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebPuY/honey-jan-export/issues"
+  },
+  "homepage": "https://github.com/WebPuY/honey-jan-export#readme",
+  "dependencies": {
+    "excel-export": "^0.5.1",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "mammoth": "^1.4.9",
+    "open": "^7.0.2",
+    "os": "^0.1.1",
+    "path": "^0.12.7",
+    "textract": "^2.5.0"
+  }
+}
