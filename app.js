@@ -15,7 +15,8 @@ const opn = require('open')
 const path = require('path')
 const textract = require('textract')
 
-const filePath = os.homedir() + '/Desktop/documents/docs'
+// const filePath = os.homedir() + '/Desktop/documents/docs'
+const filePath = path.resolve(__dirname)
 const params = getParams()
 
 const resultArray = [] // 存储所有key,value的数组
