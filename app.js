@@ -40,7 +40,10 @@ app.get('/', function (req, res) {
     caption: 'words',
     type: 'string'
   }, {
-    caption: params.lang || 'desc',
+    caption: 'news',
+    type: 'string'
+  }, {
+    caption: 'date',
     type: 'string'
   }]
   conf.rows = []
@@ -51,7 +54,7 @@ app.get('/', function (req, res) {
     return a.key - b.key > -1
   })
   array.forEach((item) => {
-    conf.rows.push([item.key, item.value])
+    conf.rows.push([item.key, item.value, item.date])
   })
   const result = nodeExcel.execute(conf)
   res.setHeader('Content-Type', 'application/vnd.openxmlformats') // application/vnd.openxmlformats
@@ -92,7 +95,7 @@ function fileDisplay (filePath) {
       if (!words) {
         console.log('------输入搜索关键字-------')
       }
-
+      const date = text.split('\n')[1]
       // 先将text按空行分为几个内容块 paragraph
       // 然后将内容块分行，key是第一行line[0] value是剩余内容
       text.split('\n\n').forEach(paragraph => {
@@ -102,7 +105,8 @@ function fileDisplay (filePath) {
             // console.log(word, '------', paragraph.slice(index + word.length))
             resultArray.push({
               key: word,
-              value: paragraph.slice(index + word.length)
+              value: paragraph.slice(index + word.length),
+              date: date || '2020年--年--日'
             })
           }
         })
