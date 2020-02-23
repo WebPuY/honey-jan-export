@@ -1,6 +1,6 @@
 {
   "name": "honey-jan-export",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "find words from word docs and export a excel",
   "main": "index.js",
   "scripts": {
