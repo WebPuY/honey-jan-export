@@ -15,9 +15,9 @@ const opn = require('open')
 const path = require('path')
 const textract = require('textract')
 
-// const filePath = os.homedir() + '/Desktop/documents/docs'
-const filePath = path.resolve(params.dir || path.join(process.cwd()))
 const params = getParams()
+// const filePath = os.homedir() + '/Desktop/documents/docs'
+const filePath = path.resolve(path.join(process.cwd()))
 
 const resultArray = [] // 存储所有key,value的数组
 
@@ -131,6 +131,10 @@ function getParams () {
 
 function motor () {
   console.log('waiting a few seconds........')
+  if (!params.words) {
+    console.log('输入搜索关键字')
+    return
+  }
   fileDisplay(filePath)
   let port = params.port || +('80' + Math.floor(Math.random() * 100))
   app.listen(port)
