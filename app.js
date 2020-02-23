@@ -9,7 +9,7 @@
 const express = require('express')
 const app = express()
 const nodeExcel = require('excel-export')
-const os = require('os');
+// const os = require('os')
 const fs = require('fs')
 const opn = require('open')
 const path = require('path')
@@ -68,7 +68,7 @@ app.get('/', function (req, res) {
 
 // 文件遍历方法
 function fileDisplay (filePath) {
-  console.log('start traversing directory....')
+  console.log('start traversing directory', filePath)
   // 根据文件路径读取文件，返回文件列表
   const readdir = fs.readdirSync(filePath) || []
   const words = params.words.split('|') || []
